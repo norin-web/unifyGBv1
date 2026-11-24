@@ -6,25 +6,30 @@ import { Phone, Waves } from "./ui";
 /** Dark feature block: list on the right switches the phone on the left. */
 export function FeatureTabs() {
   const [active, setActive] = useState(features[0].id);
-  const current = features.find((f) => f.id === active)!;
+  const index = features.findIndex((f) => f.id === active);
+  const current = features[index];
 
   return (
     <div className="feat">
       <div className="feat-stage">
         <Waves className="feat-waves" />
         <div className="feat-glow" aria-hidden="true" />
-        {features.map((f) => (
-          <div key={f.id} className={`feat-phone-slot${f.id === active ? " is-on" : ""}`} aria-hidden={f.id !== active}>
-            <Phone src={f.screen.src} alt={f.screen.alt} className="feat-phone" />
+        <div className="feat-window">
+          <div className="feat-track" style={{ transform: `translateX(-${index * 100}%)` }}>
+            {features.map((f) => (
+              <div key={f.id} className="feat-slot" aria-hidden={f.id !== active}>
+                <Phone src={f.screen.src} alt={f.screen.alt} className="feat-phone" />
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
       <div className="feat-panel" role="tabpanel" id="feat-panel" aria-label={current.label}>
         <p className="feat-kicker">{current.label}</p>
         <h3 className="feat-title">{current.title}</h3>
         <p className="feat-text">{current.text}</p>
         <div className="feat-list" role="tablist" aria-label="App features">
-          {features.map((f, i) => (
+          {features.map((f) => (
             <button
               key={f.id}
               role="tab"
@@ -33,7 +38,6 @@ export function FeatureTabs() {
               className="feat-item"
               onClick={() => setActive(f.id)}
             >
-              <span className="feat-num">{String(i + 1).padStart(2, "0")}</span>
               <span className="feat-name">{f.label}</span>
               <span className="feat-dot" aria-hidden="true" />
             </button>
@@ -54,7 +58,6 @@ export function Faq() {
         return (
           <div className={`faq-item${isOpen ? " is-open" : ""}`} key={item.q}>
             <button className="faq-q" aria-expanded={isOpen} onClick={() => setOpen(isOpen ? -1 : i)}>
-              <span className="faq-n">{i + 1}</span>
               <span className="faq-text">{item.q}</span>
               <span className="faq-icon" aria-hidden="true" />
             </button>

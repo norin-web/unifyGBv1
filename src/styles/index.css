@@ -1108,17 +1108,22 @@ textarea {
   background: radial-gradient(closest-side, rgba(255, 255, 255, 0.75), transparent);
 }
 
-/* Calm crossfade between screens. */
-.feat-phone-slot {
-  grid-area: 1 / 1;
+/* Screens slide sideways inside a fixed window. */
+.feat-window {
   position: relative;
-  opacity: 0;
-  transition: opacity 0.45s ease;
-  pointer-events: none;
+  width: 100%;
+  overflow: hidden;
 }
 
-.feat-phone-slot.is-on {
-  opacity: 1;
+.feat-track {
+  display: flex;
+  transition: transform 0.55s cubic-bezier(0.22, 0.8, 0.2, 1);
+}
+
+.feat-slot {
+  flex: 0 0 100%;
+  display: grid;
+  place-items: center;
 }
 
 .feat-phone {
@@ -1302,7 +1307,7 @@ textarea {
   gap: 16px;
   width: 100%;
   min-height: 72px;
-  padding: 18px 22px;
+  padding: 18px 22px 18px 26px;
   text-align: left;
   font-size: 18px;
   font-weight: 500;
@@ -1849,7 +1854,7 @@ textarea {
     min-height: 560px;
   }
 
-  .feat-phone {
+  .feat-slot .feat-phone {
     --w: 240px;
   }
 
@@ -2064,7 +2069,7 @@ textarea {
     border-radius: 24px;
   }
 
-  .feat-phone {
+  .feat-slot .feat-phone {
     --w: 220px;
   }
 

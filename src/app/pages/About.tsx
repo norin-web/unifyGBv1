@@ -22,7 +22,6 @@ export function About() {
             </p>
           </div>
           <div className="about-art">
-            <div className="hero-ring hero-ring--sm" aria-hidden="true" />
             <Phone src={screens.messages.src} alt={screens.messages.alt} className="about-phone" />
           </div>
         </section>

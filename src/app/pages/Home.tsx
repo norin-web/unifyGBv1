@@ -18,7 +18,6 @@ export function Home() {
         <div className="hero-bg" aria-hidden="true" />
         <Waves className="hero-waves" />
         <div className="hero-stage">
-          <div className="hero-ring" aria-hidden="true" />
           <Phone src={screens.home.src} alt={screens.home.alt} className="hero-phone" />
 
           <div className="float float--a" aria-hidden="true">
@@ -67,7 +66,7 @@ export function Home() {
         {/* S02 Benefits */}
         <section className="wrap sec">
           <div className="sec-head">
-            <Label n="01">Benefits</Label>
+            <Label>Benefits</Label>
             <h2 className="display h2">Family contact, simplified.</h2>
             <p className="sec-sub">
               Messages, visits and the rules that affect them, in one app built around the person you are writing to.
@@ -162,7 +161,7 @@ export function Home() {
       <section className="dark" id="features">
         <div className="wrap">
           <div className="sec-head sec-head--dark">
-            <Label n="02" dark>Key features</Label>
+            <Label dark>Key features</Label>
             <h2 className="display h2 h2--light">Everything in one place.</h2>
             <p className="sec-sub sec-sub--dark">
               Tap a feature to see the real screen from the app.
@@ -175,17 +174,13 @@ export function Home() {
       {/* S06 How to start */}
       <section className="wrap sec">
         <div className="sec-head">
-          <Label n="03">How to start</Label>
+          <Label>How to start</Label>
           <h2 className="display h2">Up and running in three steps.</h2>
         </div>
         <div className="steps">
           {steps.map((s, i) => (
             <article className={`step step--${i + 1}`} key={s.title}>
-              {i === 0 ? (
-                <img className="step-icon" src={img("/images/app-icon.webp")} alt="" width={64} height={64} />
-              ) : (
-                <span className="step-n">{String(i + 1).padStart(2, "0")}</span>
-              )}
+              {i === 0 && <img className="step-icon" src={img("/images/app-icon.webp")} alt="" width={64} height={64} />}
               <h3>{s.title}</h3>
               <p>{s.text}</p>
               {i === 0 && <StoreButton />}
@@ -213,7 +208,7 @@ export function Home() {
       <section className="dark dark--faq">
         <div className="wrap">
           <div className="sec-head sec-head--dark">
-            <Label n="04" dark>FAQs</Label>
+            <Label dark>FAQs</Label>
             <h2 className="display h2 h2--light">Got questions? Here are clear answers.</h2>
           </div>
           <Faq />
