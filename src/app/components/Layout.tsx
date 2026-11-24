@@ -108,6 +108,8 @@ export function Layout() {
           </div>
         </div>
 
+        <p className="wrap end-legal">{site.disclaimer}</p>
+
         <div className="wrap end-bottom">
           <span>{site.copyright}</span>
           <button className="end-top" onClick={() => window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior })}>

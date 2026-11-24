@@ -13,7 +13,7 @@ export function OurApp() {
   return (
     <main>
       <PageHero label="The app" title="Unify Messenger for iPhone">
-        <p>Messages, visit dates and clear answers about prison rules, in one app.</p>
+        <p>Messages, visit dates and AI answers about prison rules, in one app.</p>
         <StoreButton />
       </PageHero>
 

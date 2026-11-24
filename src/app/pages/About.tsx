@@ -1,4 +1,4 @@
-import { screens } from "../content/site";
+import { screens, site } from "../content/site";
 import { Phone } from "../components/ui";
 import { PageHero } from "../components/blocks";
 
@@ -19,6 +19,10 @@ export function About() {
             <p className="sec-sub sec-sub--left">
               Messages, visit dates and rule changes are easy to lose track of. Unify keeps them together, so you can
               focus on the conversation itself.
+            </p>
+            <p className="sec-sub sec-sub--left">
+              The app is operated by {site.operator}, based in Harburg, Germany. Questions go to{" "}
+              <a href={`mailto:${site.email}`}>{site.email}</a>.
             </p>
           </div>
           <div className="about-art">

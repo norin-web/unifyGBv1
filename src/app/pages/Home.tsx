@@ -51,7 +51,7 @@ export function Home() {
             <span className="grad">Stay close to the people</span> <span>who matter most</span>
           </h1>
           <p className="hero-sub">
-            Message someone in prison, keep track of visits and get clear answers about prison rules, all in one app
+            Message someone in prison, keep track of visits and get AI answers about prison rules, all in one app
             for iPhone.
           </p>
           <div className="hero-actions">
@@ -141,7 +141,7 @@ export function Home() {
             <div className="glass glass--1">
               <span className="glass-k">Delivered</span>
               <span className="glass-v">✓ 13:07</span>
-              <span className="glass-s">Every message shows its delivery time.</span>
+              <span className="glass-s">Each message shows its status and the time it changed.</span>
             </div>
             <div className="glass glass--2">
               <span className="glass-k">New connection</span>

@@ -24,7 +24,7 @@ export function FeatureTabs() {
           </div>
         </div>
       </div>
-      <div className="feat-panel" role="tabpanel" id="feat-panel" aria-label={current.label}>
+      <div className="feat-panel" role="tabpanel" id="feat-panel" aria-labelledby={`feat-tab-${current.id}`}>
         <p className="feat-kicker">{current.label}</p>
         <h3 className="feat-title">{current.title}</h3>
         <p className="feat-text">{current.text}</p>
@@ -33,6 +33,7 @@ export function FeatureTabs() {
             <button
               key={f.id}
               role="tab"
+              id={`feat-tab-${f.id}`}
               aria-selected={f.id === active}
               aria-controls="feat-panel"
               className="feat-item"
