@@ -1,31 +1,38 @@
-import { features } from "../content/site";
-import { img } from "../utils/img";
-import { AppStoreButton } from "../components/AppStoreButton";
+import { screens } from "../content/site";
+import { Phone, StoreButton } from "../components/ui";
+import { FeatureTabs, PageHero } from "../components/blocks";
+
+const reel = [
+  { s: screens.home, t: "Home" },
+  { s: screens.messages, t: "Messages" },
+  { s: screens.chat, t: "Chat" },
+  { s: screens.ask, t: "Ask about rules" },
+];
 
 export function OurApp() {
   return (
     <main>
-      <section className="wrap page-hero">
-        <h1>The app</h1>
-        <p className="lead">Messages, visit dates and answers about prison rules, in one app on iPhone.</p>
-        <AppStoreButton />
-      </section>
+      <PageHero label="The app" title="Unify Messenger for iPhone">
+        <p>Messages, visit dates and clear answers about prison rules, in one app.</p>
+        <StoreButton />
+      </PageHero>
 
-      <section className="wrap strip-compact">
-        <img className="phone" src={img("/images/screen-home.png")} alt="Home screen" />
-        <img className="phone" src={img("/images/screen-messages.png")} alt="Messages list" />
-        <img className="phone" src={img("/images/screen-chat.png")} alt="Chat conversation" />
-        <img className="phone" src={img("/images/screen-newchat.png")} alt="Ask about prison rules" />
-      </section>
+      <div className="sheet">
+        <section className="wrap sec">
+          <div className="reel">
+            {reel.map((r) => (
+              <figure className="reel-item" key={r.t}>
+                <Phone src={r.s.src} alt={r.s.alt} />
+                <figcaption>{r.t}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+      </div>
 
-      <section className="wrap section narrow">
-        <div className="rows">
-          {features.map((f) => (
-            <div className="row-item" key={f.title}>
-              <h3>{f.title}</h3>
-              <p>{f.text}</p>
-            </div>
-          ))}
+      <section className="dark dark--last">
+        <div className="wrap">
+          <FeatureTabs />
         </div>
       </section>
     </main>

@@ -1,23 +1,19 @@
-import { faq, site } from "../content/site";
+import { site } from "../content/site";
+import { Faq, PageHero } from "../components/blocks";
 
 export function Support() {
   return (
     <main>
-      <section className="wrap page-hero">
-        <h1>Support</h1>
-        <p className="lead">
-          Email <a className="link" href={`mailto:${site.email}`}>{site.email}</a>.
+      <PageHero label="Support" title="How can we help?">
+        <p>
+          Answers to common questions are below. For anything else, write to{" "}
+          <a href={`mailto:${site.email}`}>{site.email}</a>.
         </p>
-      </section>
+      </PageHero>
 
-      <section className="wrap section narrow">
-        <div className="rows">
-          {faq.map((item) => (
-            <div className="row-item" key={item.q}>
-              <h3>{item.q}</h3>
-              <p>{item.a}</p>
-            </div>
-          ))}
+      <section className="dark dark--flush">
+        <div className="wrap">
+          <Faq />
         </div>
       </section>
     </main>
