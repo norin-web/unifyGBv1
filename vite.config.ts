@@ -4,10 +4,10 @@ import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
-  // GitHub Pages without a custom domain: served from /unifyGBv1/.
-  // When a custom domain is attached in Pages settings, switch to "/" and add public/CNAME
-  // in the same commit. If the domain is removed, switch back to "/unifyGBv1/".
-  base: "/unifyGBv1/",
+  // Custom domain unifygb.online (public/CNAME) → served from the root.
+  // If the domain is removed, switch back to "/unifyGBv1/" and delete public/CNAME
+  // in the same commit, or every asset 404s.
+  base: "/",
   plugins: [react(), tailwindcss()],
   resolve: { alias: { "@": path.resolve(__dirname, "./src") } },
 });
